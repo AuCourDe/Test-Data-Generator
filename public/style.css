@@ -1,0 +1,176 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #2f2f2f;
+    color: #e0e0e0;
+}
+
+#modules {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.module {
+    background-color: #ececec;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 250px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .module {
+    background-color: #444;
+    border-color: #555;
+}
+
+.module-header {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.module-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.module-data {
+    flex-grow: 1;
+    cursor: pointer; /* Dodanie kursora wskazującego na możliwość kliknięcia */
+}
+
+.module-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+button {
+    background-color: #3481c2;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #286e9c;
+}
+
+body.dark-mode button {
+    background-color: #555;
+    color: #e0e0e0;
+}
+
+body.dark-mode button:hover {
+    background-color: #666;
+}
+
+.instructions {
+    background-color: #cf102d;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    grid-column: span 4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .instructions {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings-container input[type="radio"], 
+.settings-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.settings-container label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+h1 {
+    color: #3481c2; /* Dopasowanie koloru do przycisków */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0;
+}
+
+.copy-message {
+    background-color: #3481c2;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.50em; /* Zmniejszenie rozmiaru czcionki o 50% */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+body.dark-mode .error-message {
+    color: #ff6b6b;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #444;
+}
+
+.theme-toggle label {
+    font-size: 0.9em;
+}
+
+#theme-switch {
+    cursor: pointer;
+}
