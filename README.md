@@ -32,3 +32,41 @@ TODO:
 
 - requirements.
 - user side scripts instead of server-side.
+
+PRE-response:
+// Sprawdź, czy zmienna "fileCounter" istnieje, jeśli nie - zainicjalizuj ją na 0
+if (!pm.environment.has('fileCounter')) {
+    pm.environment.set('fileCounter', 0);
+}
+
+// Pobierz aktualny licznik
+var fileCounter = parseInt(pm.environment.get('fileCounter'));
+
+// Utwórz nazwę pliku na podstawie licznika
+var fileName = 'plik_' + fileCounter + '.txt';
+
+// Zapisz nazwę pliku w zmiennej środowiskowej
+pm.environment.set('fileName', fileName);
+
+// Opcjonalnie - wyświetl informację o nazwie pliku w konsoli
+console.log('Aktualna nazwa pliku:', fileName);
+
+
+
+POST-response:
+// Pobierz aktualny licznik
+var fileCounter = parseInt(pm.environment.get('fileCounter'));
+
+// Zwiększ licznik o 1
+fileCounter++;
+
+// Zapisz zaktualizowany licznik
+pm.environment.set('fileCounter', fileCounter);
+
+// Opcjonalnie - wyświetl informację o zaktualizowanym liczniku w konsoli
+console.log('Zaktualizowany licznik pliku:', fileCounter);
+
+STARMAN
+W BODY -> data-form:
+1 file | file | wskaż plik z dysku 
+2 fileName | text | {{fileName}}
